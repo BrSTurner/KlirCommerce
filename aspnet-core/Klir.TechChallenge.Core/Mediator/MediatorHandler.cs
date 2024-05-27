@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Klir.TechChallenge.Core.Mediator
 {
-    public class MediatorHandler : IMediatorHandler
+    public sealed class MediatorHandler : IMediatorHandler
     {
         private readonly IMediator _mediator;
         

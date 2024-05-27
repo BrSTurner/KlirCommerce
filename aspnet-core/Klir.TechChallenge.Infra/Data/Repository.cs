@@ -1,6 +1,7 @@
 ﻿using Klir.TechChallenge.Core.Data;
 using Klir.TechChallenge.Core.DomainObjects;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
 
 namespace Klir.TechChallenge.Infra.Data
 {
@@ -15,9 +16,16 @@ namespace Klir.TechChallenge.Infra.Data
             _entity = _context.Set<T>();
         }
 
+        public DbConnection GetConnection()
+        {
+            return _context.Database.GetDbConnection();
+        }
+
         public void Dispose()
         {
             _context.Dispose();
         }
+
+     
     }
 }

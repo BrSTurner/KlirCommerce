@@ -1,8 +1,10 @@
-﻿using Klir.TechChallenge.Core.Data;
+﻿using Klir.TechChallenge.Application.Products.Queries;
+using Klir.TechChallenge.Core.Data;
 using Klir.TechChallenge.Domain.Products.Repositories;
 using Klir.TechChallenge.Domain.Promotions.Repositories;
 using Klir.TechChallenge.Domain.ShoppingCart.Repositories;
 using Klir.TechChallenge.Infra.Data;
+using Klir.TechChallenge.Infra.Products.Queries;
 using Klir.TechChallenge.Infra.Products.Repositories;
 using Klir.TechChallenge.Infra.Promotions.Repositories;
 using Klir.TechChallenge.Infra.ShoppingCart.Repositories;
@@ -18,6 +20,8 @@ namespace Klir.TechChallenge.Infra.Extensions
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductQueries, ProductQueries>();
+
             services.AddScoped<IPromotionRepository, PromotionRepository>();
             services.AddScoped<ICartRepository, CartRepository>();
 

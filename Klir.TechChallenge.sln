@@ -29,6 +29,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Web.Api"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Tests", "aspnet-core\Klir.TechChallenge.Tests\Klir.TechChallenge.Tests.csproj", "{AB640103-D202-4E33-B7DC-77B2BEF2FC60}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{BB9468B2-4B4B-415A-8082-92D9D47B7765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Core", "aspnet-core\Klir.TechChallenge.Core\Klir.TechChallenge.Core.csproj", "{0474671B-5DF5-4551-B2AC-0A372733788C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Domain", "aspnet-core\Klir.TechChallenge.Domain\Klir.TechChallenge.Domain.csproj", "{C2E4AC7C-DAB7-449D-A349-3958381F079E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Infra", "aspnet-core\Klir.TechChallenge.Infra\Klir.TechChallenge.Infra.csproj", "{42B3DACF-75A0-4CD2-9451-31FFA87F8A6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +54,18 @@ Global
 		{AB640103-D202-4E33-B7DC-77B2BEF2FC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB640103-D202-4E33-B7DC-77B2BEF2FC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB640103-D202-4E33-B7DC-77B2BEF2FC60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0474671B-5DF5-4551-B2AC-0A372733788C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0474671B-5DF5-4551-B2AC-0A372733788C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0474671B-5DF5-4551-B2AC-0A372733788C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0474671B-5DF5-4551-B2AC-0A372733788C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E4AC7C-DAB7-449D-A349-3958381F079E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E4AC7C-DAB7-449D-A349-3958381F079E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E4AC7C-DAB7-449D-A349-3958381F079E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E4AC7C-DAB7-449D-A349-3958381F079E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42B3DACF-75A0-4CD2-9451-31FFA87F8A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B3DACF-75A0-4CD2-9451-31FFA87F8A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B3DACF-75A0-4CD2-9451-31FFA87F8A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B3DACF-75A0-4CD2-9451-31FFA87F8A6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +81,10 @@ Global
 		{FFAD57AF-CBFB-420B-A951-B5B1557E2B89} = {F332D047-B9A7-4B85-8359-9328589BED29}
 		{06A0959B-A1D1-4C5C-930A-0F500E9395F5} = {1A0AC12E-D080-4C23-96A3-0FBF7187A926}
 		{AB640103-D202-4E33-B7DC-77B2BEF2FC60} = {A2B92FAD-919A-44D2-95FF-FAD427C348B4}
+		{BB9468B2-4B4B-415A-8082-92D9D47B7765} = {FFAD57AF-CBFB-420B-A951-B5B1557E2B89}
+		{0474671B-5DF5-4551-B2AC-0A372733788C} = {BB9468B2-4B4B-415A-8082-92D9D47B7765}
+		{C2E4AC7C-DAB7-449D-A349-3958381F079E} = {17F42196-5C5B-4105-AB12-D32613AF0259}
+		{42B3DACF-75A0-4CD2-9451-31FFA87F8A6A} = {B4F3E46F-C396-4070-994C-4E460D372533}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B22C9792-C11E-4F83-91D8-5ACFDDC0FC5E}

@@ -11,6 +11,8 @@ namespace Klir.TechChallenge.Core.Extensions
     {
         public static IServiceCollection AddCore(this IServiceCollection services)
         {
+            services.AddMediatR(config => config.RegisterServicesFromAssemblies(typeof(DomainNotificationHandler).Assembly));
+
             services.AddScoped<IMediatorHandler, MediatorHandler>();
             services.AddScoped<INotificator, Notificator>();
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();

@@ -5,6 +5,7 @@ namespace Klir.TechChallenge.Infra.Data
 {
     public class KlirCommerceContext : DbContext
     {
+
         public KlirCommerceContext(DbContextOptions options) : base(options)
         {
             ChangeTracker.LazyLoadingEnabled = false;

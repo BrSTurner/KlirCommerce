@@ -1,7 +1,4 @@
-using System;
-using Xunit;
-
-namespace KlirTechChallenge.Tests
+namespace Klir.TechChallenge.Tests
 {
     public class UnitTest1
     {

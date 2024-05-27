@@ -1,0 +1,6 @@
+@Klir.TechChallenge.Web.Api_HostAddress = http://localhost:5102
+
+GET {{Klir.TechChallenge.Web.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -6,7 +6,7 @@ using Klir.TechChallenge.Web.Api.Abstraction;
 using Klir.TechChallenge.Web.Api.Models;
 using Klir.TechChallenge.Web.Api.ShoppingCart.Models;
 
-namespace Klir.TechChallenge.Web.Api.Cart.Endpoints
+namespace Klir.TechChallenge.Web.Api.ShoppingCart.Endpoints
 {
     public class CartEndpoints : IEndpointBuilder
     {
@@ -20,6 +20,21 @@ namespace Klir.TechChallenge.Web.Api.Cart.Endpoints
                     return Results.BadRequest(CustomResponse.ErrorResponse(new List<string> { "Cart Id is requied" }));
 
                 return Results.Ok(CustomResponse.SuccessResponse(await cartQueries.GetByIdAsync(id)));
+            });
+
+            group.MapGet("/{id:Guid:required}/calculated", async (Guid id, IMediatorHandler mediator) =>
+            {
+                if (id.Equals(Guid.Empty))
+                    return Results.BadRequest(CustomResponse.ErrorResponse(new List<string> { "Cart Id is requied" }));
+
+                var command = new CalculateCartCommand { CartId = id };
+
+                var result = await mediator.SendCommand<CartDTO, CalculateCartCommand>(command);
+
+                if (result.Success)
+                    return Results.Ok(CustomResponse.SuccessResponse(result.Data));
+
+                return Results.BadRequest();
             });
 
             group.MapPost(string.Empty, async (CreateCartRequest request, IMediatorHandler mediator) =>

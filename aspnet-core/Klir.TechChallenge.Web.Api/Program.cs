@@ -1,5 +1,6 @@
 using Klir.TechChallenge.Infra.IoC;
 using Klir.TechChallenge.Web.Api.Configuration;
+using Klir.TechChallenge.Web.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,5 +31,7 @@ app.UseHttpsRedirection();
 app.UseCors(ALLOW_SPECIFIC_ORIGINS);
 
 app.MapEndpoints();
+
+app.UseMiddleware<NotificationMiddleware>();
 
 app.Run();

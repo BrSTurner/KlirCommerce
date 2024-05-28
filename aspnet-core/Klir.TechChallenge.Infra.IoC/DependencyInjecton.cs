@@ -1,6 +1,7 @@
 ﻿using Klir.TechChallenge.Application.ShoppingCart.Handlers;
 using Klir.TechChallenge.Core.Extensions;
 using Klir.TechChallenge.Core.Handlers;
+using Klir.TechChallenge.Domain.Extensions;
 using Klir.TechChallenge.Infra.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,7 @@ namespace Klir.TechChallenge.Infra.IoC
                 typeof(CreateCartHandler).Assembly));
 
             services.AddCore();
+            services.AddDomain();
             services.AddInfrastructure(configuration);
 
             return services;

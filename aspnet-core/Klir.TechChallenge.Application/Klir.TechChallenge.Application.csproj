@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Klir.TechChallenge.Core\Klir.TechChallenge.Core.csproj" />
     <ProjectReference Include="..\Klir.TechChallenge.Domain\Klir.TechChallenge.Domain.csproj" />
   </ItemGroup>
 

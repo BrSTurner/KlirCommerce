@@ -11,15 +11,15 @@
             Data = data
         };
 
-        public static CommandResult<object> Ok() => new CommandResult<object>
+        public static CommandResult<T> Ok() => new CommandResult<T>
         {
             Success = true,
-            Data = null
+            Data = default
         };
 
-        public static CommandResult<object> Fail() => new CommandResult<object>
+        public static CommandResult<T> Fail() => new CommandResult<T>
         {
-            Data = null
+            Data = default
         };
     }
 }

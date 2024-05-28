@@ -9,5 +9,7 @@ namespace Klir.TechChallenge.Infra.ShoppingCart.Repositories
         public CartRepository(KlirCommerceContext context) : base(context)
         {
         }
+
+        public async Task AddAsync(Cart cart) => await _entity.AddAsync(cart);
     }
 }

@@ -7,8 +7,8 @@ namespace Klir.TechChallenge.Infra.Data
 {
     public abstract class Repository<T> : IRepository<T> where T : class, IAggregateRoot
     {
-        private readonly KlirCommerceContext _context;
-        private readonly DbSet<T> _entity;
+        protected readonly KlirCommerceContext _context;
+        protected readonly DbSet<T> _entity;
 
         public Repository(KlirCommerceContext context)
         {

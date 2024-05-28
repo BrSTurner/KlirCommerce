@@ -5,5 +5,6 @@ namespace Klir.TechChallenge.Domain.ShoppingCart.Repositories
 {
     public interface ICartRepository : IRepository<Cart>
     {
+        Task AddAsync(Cart cart);
     }
 }

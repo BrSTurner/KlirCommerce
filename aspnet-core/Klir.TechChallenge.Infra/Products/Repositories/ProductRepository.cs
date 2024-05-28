@@ -1,6 +1,7 @@
 ﻿using Klir.TechChallenge.Domain.Products.Models;
 using Klir.TechChallenge.Domain.Products.Repositories;
 using Klir.TechChallenge.Infra.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Klir.TechChallenge.Infra.Products.Repositories
 {
@@ -10,6 +11,13 @@ namespace Klir.TechChallenge.Infra.Products.Repositories
         {
         }
 
-
+        public async Task<IEnumerable<Product>> GetMultipleByIdNoTrackingAsync(IList<Guid> ids)
+        {
+            return await _entity
+                            .AsNoTracking()
+                            .Include(x => x.Promotion)
+                            .Where(x => ids.Contains(x.Id))
+                            .ToListAsync();
+        }
     }
 }

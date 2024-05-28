@@ -1,0 +1,47 @@
+<div class="container mt-5" *ngIf="this.cart.items.length > 0; else noItems">
+  <div class="row justify-content-center" >
+    <div class="col-md-8">
+      <table class="table table-striped table-bordered" >
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total</th>
+            <th scope="col">Promotion Applied</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cart.items">
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.price | currency: 'EUR' }}</td>
+            <td>{{ item.totalPrice | currency: 'EUR'}}</td>
+            <td>{{ (item.isPromotionApplied ? item?.product?.promotion?.name : '') }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{cart.total | currency: 'EUR'}}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-12">
+      <div class="d-flex justify-content-center mb-2">
+        <button (click)="clearCart()" class="btn btn-danger">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #noItems>
+  <div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="text-center">
+      <h4>No products in your cart yet.</h4>
+      <a href="/products">Start Shopping</a>
+    </div>
+  </div>
+</ng-template>
+<ngx-spinner type="pacman"><p style="color: white" > Loading... </p></ngx-spinner>

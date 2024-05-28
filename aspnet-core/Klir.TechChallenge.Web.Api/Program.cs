@@ -11,7 +11,10 @@ builder.Services.ResolveDependencies(builder.Configuration);
 builder.Services.AddEndpoints(typeof(Program).Assembly);
 builder.Services.AddCors(options => options.AddPolicy(ALLOW_SPECIFIC_ORIGINS, builder =>
 {
-    builder.WithOrigins("http://localhost:4200");
+    builder
+    .AllowAnyHeader()  
+    .AllowAnyMethod()
+    .WithOrigins("http://localhost:4200");
 }));
 
 var app = builder.Build();

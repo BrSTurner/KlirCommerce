@@ -11,6 +11,9 @@ import { cart } from 'ngx-bootstrap-icons';
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxSpinnerConfig } from 'ngx-spinner/lib/config';
+import { ToastrModule } from 'ngx-toastr';
+import { CartService } from './cart/services/cart.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const icons = {
@@ -20,7 +23,7 @@ const icons = {
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +33,13 @@ const icons = {
     NgxBootstrapIconsModule.pick(icons),
     NgxSpinnerModule.forRoot({
       type: "pacman"
-    } as NgxSpinnerConfig)
+    } as NgxSpinnerConfig),
+    ToastrModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

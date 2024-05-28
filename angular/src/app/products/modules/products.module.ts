@@ -7,6 +7,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsService } from '../services/products.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http'
+import { CartService } from 'src/app/cart/services/cart.service';
 
 
 
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http'
     HttpClientModule
   ],
   providers: [
-    ProductsService
+    ProductsService,
+    CartService
   ]
 })
 export class ProductsModule { }

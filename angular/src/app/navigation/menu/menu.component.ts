@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/cart/services/cart.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,11 +9,11 @@ import { Component } from '@angular/core';
 export class MenuComponent {
   public isCollapsed: boolean;
 
-  constructor() {
+  constructor(private cartService: CartService) {
     this.isCollapsed = true;
   }
 
   get totalItensInCart(): number{
-    return 0;
+    return this.cartService.getTotalItens();
   }
 }

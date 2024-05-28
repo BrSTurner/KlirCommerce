@@ -3,6 +3,7 @@ using Klir.TechChallenge.Application.ShoppingCart.Queries;
 using Klir.TechChallenge.Core.Data;
 using Klir.TechChallenge.Domain.Products.Repositories;
 using Klir.TechChallenge.Domain.Promotions.Repositories;
+using Klir.TechChallenge.Domain.ShoppingCart.PriceCalculationStrategy.Abstraction;
 using Klir.TechChallenge.Domain.ShoppingCart.Repositories;
 using Klir.TechChallenge.Infra.Data;
 using Klir.TechChallenge.Infra.Products.Queries;
@@ -10,6 +11,7 @@ using Klir.TechChallenge.Infra.Products.Repositories;
 using Klir.TechChallenge.Infra.Promotions.Repositories;
 using Klir.TechChallenge.Infra.ShoppingCart.Queries;
 using Klir.TechChallenge.Infra.ShoppingCart.Repositories;
+using Klir.TechChallenge.Infra.ShoppingCart.Resolver;
 using Klir.TechChallenge.Infra.UoW;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -35,6 +37,8 @@ namespace Klir.TechChallenge.Infra.Extensions
             {
                 options.UseSqlServer(configuration.GetConnectionString("KlirDatabase"));
             });
+
+            services.AddSingleton<IPriceCalculatorStrategyResolver, PriceCalculatorStrategyResolver>();
 
             return services;
         }

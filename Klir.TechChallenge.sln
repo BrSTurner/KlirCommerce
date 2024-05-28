@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{C5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Web.Front", "angular\Klir.TechChallenge.Web.Front.csproj", "{7C53E485-14DD-4017-A992-193A405530AB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{A2B92FAD-919A-44D2-95FF-FAD427C348B4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{A2B92FAD-919A-44D2-95FF-FAD427C348B4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{DA44832D-5070-4746-89A1-8A0DA71FF3A1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{DA44832D-5070-4746-89A1-8A0DA71FF3A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{1A0AC12E-D080-4C23-96A3-0FBF7187A926}"
 EndProject
@@ -25,21 +25,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Building Blocks", "Building Blocks", "{FFAD57AF-CBFB-420B-A951-B5B1557E2B89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Web.Api", "aspnet-core\Klir.TechChallenge.Web.Api\Klir.TechChallenge.Web.Api.csproj", "{06A0959B-A1D1-4C5C-930A-0F500E9395F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Web.Api", "aspnet-core\Klir.TechChallenge.Web.Api\Klir.TechChallenge.Web.Api.csproj", "{06A0959B-A1D1-4C5C-930A-0F500E9395F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Tests", "aspnet-core\Klir.TechChallenge.Tests\Klir.TechChallenge.Tests.csproj", "{AB640103-D202-4E33-B7DC-77B2BEF2FC60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Tests", "aspnet-core\Klir.TechChallenge.Tests\Klir.TechChallenge.Tests.csproj", "{AB640103-D202-4E33-B7DC-77B2BEF2FC60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{BB9468B2-4B4B-415A-8082-92D9D47B7765}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Core", "aspnet-core\Klir.TechChallenge.Core\Klir.TechChallenge.Core.csproj", "{0474671B-5DF5-4551-B2AC-0A372733788C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Core", "aspnet-core\Klir.TechChallenge.Core\Klir.TechChallenge.Core.csproj", "{0474671B-5DF5-4551-B2AC-0A372733788C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Domain", "aspnet-core\Klir.TechChallenge.Domain\Klir.TechChallenge.Domain.csproj", "{C2E4AC7C-DAB7-449D-A349-3958381F079E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Domain", "aspnet-core\Klir.TechChallenge.Domain\Klir.TechChallenge.Domain.csproj", "{C2E4AC7C-DAB7-449D-A349-3958381F079E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Infra", "aspnet-core\Klir.TechChallenge.Infra\Klir.TechChallenge.Infra.csproj", "{42B3DACF-75A0-4CD2-9451-31FFA87F8A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Infra", "aspnet-core\Klir.TechChallenge.Infra\Klir.TechChallenge.Infra.csproj", "{42B3DACF-75A0-4CD2-9451-31FFA87F8A6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Infra.IoC", "aspnet-core\Klir.TechChallenge.Infra.IoC\Klir.TechChallenge.Infra.IoC.csproj", "{0777852C-1755-4CCE-AC37-92180F41686F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Infra.IoC", "aspnet-core\Klir.TechChallenge.Infra.IoC\Klir.TechChallenge.Infra.IoC.csproj", "{0777852C-1755-4CCE-AC37-92180F41686F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klir.TechChallenge.Application", "aspnet-core\Klir.TechChallenge.Application\Klir.TechChallenge.Application.csproj", "{852A8A02-91AF-48A8-9CFF-C3770D0443CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klir.TechChallenge.Application", "aspnet-core\Klir.TechChallenge.Application\Klir.TechChallenge.Application.csproj", "{852A8A02-91AF-48A8-9CFF-C3770D0443CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

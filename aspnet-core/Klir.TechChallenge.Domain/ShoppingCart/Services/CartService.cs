@@ -4,22 +4,21 @@ using Klir.TechChallenge.Domain.Promotions.Models;
 using Klir.TechChallenge.Domain.ShoppingCart.Models;
 using Klir.TechChallenge.Domain.ShoppingCart.PriceCalculationStrategy.Abstraction;
 using Klir.TechChallenge.Domain.ShoppingCart.Repositories;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Klir.TechChallenge.Domain.ShoppingCart.Services
 {
     public class CartService : ICartService
     {
-        private readonly IServiceProvider _serviceProvider;
+        private readonly IPriceCalculatorStrategyResolver _priceCalculatorResolver;
         private readonly ICartRepository _cartRepository;
         private readonly IUnitOfWork _unitOfWork;
 
         public CartService(
-            IServiceProvider serviceProvider,
+            IPriceCalculatorStrategyResolver priceCalculatorResolver,
             ICartRepository cartRepository,
             IUnitOfWork unitOfWork)
         {
-            _serviceProvider = serviceProvider;
+            _priceCalculatorResolver = priceCalculatorResolver;
             _cartRepository = cartRepository;
             _unitOfWork = unitOfWork;
         }
@@ -46,7 +45,7 @@ namespace Klir.TechChallenge.Domain.ShoppingCart.Services
                     return Result<Cart>.Fail(cart, $"Promotion {product.Promotion.Name} for the product {product.Name} is no longer available");
                 }
 
-                var priceCalculatorStrategy = _serviceProvider.GetRequiredKeyedService<IPriceCalculatorStrategy>(product.Promotion?.Type ?? PromotionType.None);
+                var priceCalculatorStrategy = _priceCalculatorResolver.GetPriceCalculator(product.Promotion?.Type ?? PromotionType.None);
 
                 if (priceCalculatorStrategy is null)
                 {

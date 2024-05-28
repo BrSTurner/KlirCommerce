@@ -9,6 +9,9 @@ import { MenuComponent } from './navigation/menu/menu.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { cart } from 'ngx-bootstrap-icons';
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxSpinnerConfig } from 'ngx-spinner/lib/config';
+
 
 const icons = {
   cart
@@ -24,7 +27,10 @@ const icons = {
     AppRoutingModule,
     BrowserAnimationsModule,
     CollapseModule,
-    NgxBootstrapIconsModule.pick(icons)
+    NgxBootstrapIconsModule.pick(icons),
+    NgxSpinnerModule.forRoot({
+      type: "pacman"
+    } as NgxSpinnerConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

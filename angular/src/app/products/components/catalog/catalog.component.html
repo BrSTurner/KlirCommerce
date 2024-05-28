@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="container">
+      <div class="row" *ngIf="pagedResult.totalResults > 0; else noProducts">
+        <div class="col-md-4 mt-2 mb-4" *ngFor="let product of pagedResult.list">
+          <app-product-card [product]="product"></app-product-card>
+        </div>
+      </div>
+  </div>
+</div>
+<ng-template #noProducts>
+  <div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="text-center">
+      <h4>No products were found</h4>
+      <p>Please try again later.</p>
+    </div>
+  </div>
+</ng-template>
+<ngx-spinner type="pacman"><p style="color: white" > Loading... </p></ngx-spinner>

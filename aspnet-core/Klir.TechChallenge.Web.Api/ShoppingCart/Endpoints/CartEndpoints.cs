@@ -69,6 +69,21 @@ namespace Klir.TechChallenge.Web.Api.Cart.Endpoints
 
                 return Results.BadRequest();
             });
+
+            group.MapDelete("{id:Guid:required}/items", async (Guid id, IMediatorHandler mediator) =>
+            {
+                if (id.Equals(Guid.Empty))
+                    return Results.BadRequest(CustomResponse.ErrorResponse(new List<string> { "Cart Id is requied" }));
+
+                var command = new DeleteCartItemsCommand { CartId = id };
+
+                var result = await mediator.SendCommand<bool, DeleteCartItemsCommand>(command);
+
+                if (result.Success)
+                    return Results.NoContent();
+
+                return Results.BadRequest();
+            });
         }
     }
 }

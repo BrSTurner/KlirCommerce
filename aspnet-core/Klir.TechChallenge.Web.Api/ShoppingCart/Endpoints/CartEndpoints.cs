@@ -45,9 +45,9 @@ namespace Klir.TechChallenge.Web.Api.Cart.Endpoints
                 return Results.BadRequest();
             });
 
-            group.MapPut(string.Empty, async (UpdateCartRequest request, IMediatorHandler mediator) =>
+            group.MapPut("{id:guid:required}", async (Guid id, UpdateCartRequest request, IMediatorHandler mediator) =>
             {
-                if (request is null)
+                if (request is null || id.Equals(Guid.Empty) || !id.Equals(request.Id))
                     return Results.BadRequest(CustomResponse.ErrorResponse(new List<string> { "Request incorrectly filled" }));
 
                 var command = new UpdateCartCommand

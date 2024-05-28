@@ -80,6 +80,8 @@ namespace Klir.TechChallenge.Application.ShoppingCart.Handlers
                 currentItem.SetTotalPrice(0);
             }
 
+            _cartRepository.Update(cart);   
+
             if (!(await CommitChanges(_unitOfWork)).IsValid)
                 return CommandResult<CartDTO>.Fail();
 

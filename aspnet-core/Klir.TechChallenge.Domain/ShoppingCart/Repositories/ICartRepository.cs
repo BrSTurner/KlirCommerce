@@ -7,5 +7,6 @@ namespace Klir.TechChallenge.Domain.ShoppingCart.Repositories
     {
         Task<Cart?> GetAsync(Guid id);
         Task AddAsync(Cart cart);
+        void Update(Cart cart);
     }
 }

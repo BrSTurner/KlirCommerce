@@ -4,6 +4,7 @@ import { Product } from '../../models/IProduct';
 import { CustomResponse } from 'src/shared/models/ICustomResponse';
 import { ProductsService } from '../../services/products.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-catalog',
@@ -14,7 +15,8 @@ export class CatalogComponent {
   pagedResult: PagedResult<Product>;
 
   constructor(private service: ProductsService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private toaster: ToastrService
   ){
     this.pagedResult = {
       totalResults: 0,
@@ -45,8 +47,12 @@ export class CatalogComponent {
     this.spinner.hide();
   }
 
-  private handleError(error:any){
-    console.log(JSON.stringify(error));
+  private handleError(error: CustomResponse<any> | any){
+    if(error instanceof CustomResponse) {
+      error.errors.forEach((message) => {
+        this.toaster.error(message);
+      })
+    }
     this.spinner.hide();
   }
 }

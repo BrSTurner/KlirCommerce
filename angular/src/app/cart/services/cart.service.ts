@@ -137,6 +137,9 @@ export class CartService {
     }));
   }
 
+  public calculate(cartId: string){
+    return this.client.get<CustomResponse<Cart>>(`${this.apiURL}/${cartId}/calculated`);
+  }
 
   public handleGetCartSuccess(response: CustomResponse<Cart>): void {
     if(response.success){
@@ -163,8 +166,14 @@ export class CartService {
     }
   }
 
-  public handleRequestError(error: CustomResponse<any>){
-    console.error(JSON.stringify(error));
+  public handleRequestError(error: CustomResponse<any> | any){
+
+    if(error instanceof CustomResponse) {
+      error.errors.forEach((message) => {
+        this.toaster.error(message);
+      })
+    }
+
     this.spinner.hide();
   }
 }

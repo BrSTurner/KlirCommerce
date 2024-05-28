@@ -5,6 +5,7 @@ namespace Klir.TechChallenge.Domain.Products.Repositories
 {
     public interface IProductRepository : IRepository<Product>
     {
+        Task<Product?> GetAsync(Guid id);
         Task<IEnumerable<Product>> GetMultipleByIdNoTrackingAsync(IList<Guid> ids);
     }
 }

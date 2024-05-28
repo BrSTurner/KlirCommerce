@@ -11,6 +11,10 @@ namespace Klir.TechChallenge.Infra.Products.Repositories
         {
         }
 
+        public async Task<Product?> GetAsync(Guid id) => await _entity
+                                                                  .Include(p => p.Promotion)
+                                                                  .FirstOrDefaultAsync(p => p.Id.Equals(id));
+
         public async Task<IEnumerable<Product>> GetMultipleByIdNoTrackingAsync(IList<Guid> ids)
         {
             return await _entity

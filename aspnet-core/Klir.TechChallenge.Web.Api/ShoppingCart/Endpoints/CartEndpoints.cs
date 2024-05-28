@@ -44,6 +44,31 @@ namespace Klir.TechChallenge.Web.Api.Cart.Endpoints
 
                 return Results.BadRequest();
             });
+
+            group.MapPut(string.Empty, async (UpdateCartRequest request, IMediatorHandler mediator) =>
+            {
+                if (request is null)
+                    return Results.BadRequest(CustomResponse.ErrorResponse(new List<string> { "Request incorrectly filled" }));
+
+                var command = new UpdateCartCommand
+                {
+                    Id = request.Id,
+                    Items = request.Items.Select(x => new CartItemDTO
+                    {
+                        CartId = x.CartId,
+                        ProductId = x.ProductId,
+                        Quantity = x.Quantity,
+                        UnitPrice = x.UnitPrice,
+                    })
+                };
+
+                var result = await mediator.SendCommand<CartDTO, UpdateCartCommand>(command);
+
+                if (result.Success)
+                    return Results.Ok(CustomResponse.SuccessResponse(result.Data));
+
+                return Results.BadRequest();
+            });
         }
     }
 }

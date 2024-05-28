@@ -1,5 +1,6 @@
 ﻿using Klir.TechChallenge.Application.ShoppingCart.Commands;
 using Klir.TechChallenge.Application.ShoppingCart.Models;
+using Klir.TechChallenge.Application.ShoppingCart.Queries;
 using Klir.TechChallenge.Core.Mediator;
 using Klir.TechChallenge.Web.Api.Abstraction;
 using Klir.TechChallenge.Web.Api.Models;
@@ -12,6 +13,14 @@ namespace Klir.TechChallenge.Web.Api.Cart.Endpoints
         public void MapEndpoints(IEndpointRouteBuilder endpointBuilder)
         {
             var group = endpointBuilder.MapGroup("/api/cart");
+
+            group.MapGet("/{id:Guid:required}", async (Guid id, ICartQueries cartQueries) =>
+            {
+                if (id.Equals(Guid.Empty))
+                    return Results.BadRequest(CustomResponse.ErrorResponse(new List<string> { "Cart Id is requied" }));
+
+                return Results.Ok(CustomResponse.SuccessResponse(await cartQueries.GetByIdAsync(id)));
+            });
 
             group.MapPost(string.Empty, async (CreateCartRequest request, IMediatorHandler mediator) =>
             {

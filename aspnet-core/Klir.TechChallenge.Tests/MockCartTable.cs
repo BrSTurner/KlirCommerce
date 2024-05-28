@@ -1,5 +1,5 @@
-﻿using Klir.TechChallenge.Domain.Products.Models;
-using Klir.TechChallenge.Domain.ShoppingCart.Models;
+﻿using Klir.TechChallenge.Domain.ShoppingCart.Models;
+using System.Linq;
 
 namespace Klir.TechChallenge.Tests
 {
@@ -62,7 +62,7 @@ namespace Klir.TechChallenge.Tests
                 {
                     Id = Guid.Parse("03f7471f-d4a9-4ada-8a40-7c0cea29fa03"),
                     Total = 0,
-                    Items = CartItems
+                    Items = CartItems.ToList(),
                 },
                 new Cart
                 {

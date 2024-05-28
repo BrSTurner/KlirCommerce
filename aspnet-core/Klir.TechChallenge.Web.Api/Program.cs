@@ -35,3 +35,5 @@ app.MapEndpoints();
 app.UseMiddleware<NotificationMiddleware>();
 
 app.Run();
+
+public partial class Program { }
